@@ -15,3 +15,6 @@ Output: pre_details, pre_summary, pos_details, pos_summary, err_summary (tabular
 
 Step 4: FastQC (Galaxy Version 0.73+galaxy0)
 Output: text_file (txt)
+
+Step 5: MultiQC (Galaxy Version 1.11+galaxy1)
+Output: html_report (html)
