@@ -12,3 +12,6 @@ Output: outFile (bam)
 
 Step 3: Picard Collect Sequencing Artifact Metrics (Galaxy Version 2.18.2.2)
 Output: pre_details, pre_summary, pos_details, pos_summary, err_summary (tabular)
+
+Step 4: FastQC (Galaxy Version 0.73+galaxy0)
+Output: text_file (txt)
