@@ -1,2 +1,5 @@
 Input Raw Sequence Data
 Input: RMH200SolidBRCA-Blend-T_S95_R1_001.fastq.qz & RMH200SolidBRCA-Blend-T_S95_R2_001.fastq.qz
+
+Input Reference Genome
+Input: hg19.fa
