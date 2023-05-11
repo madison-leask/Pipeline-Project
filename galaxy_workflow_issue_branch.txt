@@ -3,7 +3,7 @@ Created a development branch of pipeline v1.0 (Pipeline v1.0 branch) using datas
 Inputs:
 FastQC on FASTQ R1: RawData, FastQC on FASTQ R2: RawData, MarkDuplicates on Bowtie2 output BAM, hg19.fa (Reference Genome)
 
-Step 1: Picard Collect Sequencing Artifact Metrics (Galaxy Version 2.18.2.2)
+Step 1: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
 
 Step 2: AddOrReplaceReadGroups (Galaxy Version 2.18.2.1)
 
