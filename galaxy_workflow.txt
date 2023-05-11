@@ -3,3 +3,5 @@ Input: RMH200SolidBRCA-Blend-T_S95_R1_001.fastq.qz & RMH200SolidBRCA-Blend-T_S95
 
 Input Reference Genome
 Input: hg19.fa
+
+Step 1: BWA-MEM2 (Galaxy Version 2.2.1+galaxy0)
