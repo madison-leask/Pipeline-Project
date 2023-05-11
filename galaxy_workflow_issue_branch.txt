@@ -5,4 +5,6 @@ FastQC on FASTQ R1: RawData, FastQC on FASTQ R2: RawData, MarkDuplicates on Bowt
 
 Step 1: Picard Collect Sequencing Artifact Metrics (Galaxy Version 2.18.2.2)
 
-Step 2: MultiQC (Galaxy Version 1.11+galaxy1)
+Step 2: AddOrReplaceReadGroups (Galaxy Version 2.18.2.1)
+
+Step 3: MultiQC (Galaxy Version 1.11+galaxy1)
