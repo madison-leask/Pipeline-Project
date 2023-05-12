@@ -22,11 +22,14 @@ Output: outFile (tabular)
 Step 6: MultiQC (Galaxy Version 1.11+galaxy1)
 Output: html_report (html)
 
-Step 7: GATK4 Mutec2 (Galaxy Version 4.1.7.0+galaxy1)
+Step 7: AddOrReplaceReadGroups (Galaxy Version 2.18.2.1)
+Output: outFile (bam)
+
+Step 8: GATK4 Mutec2 (Galaxy Version 4.1.7.0+galaxy1)
 Output: output_vcf (vcf)
 
 Input BED
 Input: BRCADirect.v1.0.bed
 
-SnpSift Intervals (Galaxy Version 4.3+t.galaxy0)
+Step 9: SnpSift Intervals (Galaxy Version 4.3+t.galaxy0)
 Output: output (vcf)
