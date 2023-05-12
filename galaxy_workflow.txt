@@ -28,3 +28,5 @@ Output: output_vcf (vcf)
 Input BED
 Input: BRCADirect.v1.0.bed
 
+SnpSift Intervals (Galaxy Version 4.3+t.galaxy0)
+Output: output (vcf)
