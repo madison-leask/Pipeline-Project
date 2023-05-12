@@ -22,5 +22,9 @@ Output: outFile (tabular)
 Step 6: MultiQC (Galaxy Version 1.11+galaxy1)
 Output: html_report (html)
 
+Step 7: GATK4 Mutec2 (Galaxy Version 4.1.7.0+galaxy1)
+Output: output_vcf (vcf)
+
 Input BED
 Input: BRCADirect.v1.0.bed
+
