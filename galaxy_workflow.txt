@@ -8,28 +8,44 @@ Input BED
 Input: BRCADirect.v1.0.bed
 
 Step 1: FastQC (Galaxy Version 0.73+galaxy0)
-Output: text_file (txt)
+Input: RMH200SolidBRCA-Blend-T_S95_R1_001.fastq.qz 
+Output: html_file (html), text_file (txt)
 
-Step 2: Bowtie2 (Galaxy Version 2.5.0+galaxy0)
-Output: bam_output
+Step 2: FastQC (Galaxy Version 0.73+galaxy0)
+Input: RMH200SolidBRCA-Blend-T_S95_R2_001.fastq.qz
+Output: html_file (html), text_file (txt)
 
-Step 3 :Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
+Step 3: Bowtie2 (Galaxy Version 2.5.0+galaxy0)
+Input: RMH200SolidBRCA-Blend-T_S95_R1_001.fastq.qz & RMH200SolidBRCA-Blend-T_S95_R2_001.fastq.qz
+Input Reference Genome: hg19.fa
+Output: output (bam, qname_input_sorted.bam, sam)
+
+Step 4: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
+Input: output (bam, qname_input_sorted.bam, sam)
+Input Reference Genome: hg19.fa
 Output: outFile (tabular)
 
-Step 4: MarkDuplicates (Galaxy Version 2.18.2.4)
+Step 5: MarkDuplicates (Galaxy Version 2.18.2.4)
 Output: outFile (bam)
 
-Step 5: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
+Step 6: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
+Input: outFile (bam)
+Input Reference Genome: hg19.fa
 Output: outFile (tabular)
 
-Step 6: MultiQC (Galaxy Version 1.11+galaxy1)
+Step 7: MultiQC (Galaxy Version 1.11+galaxy1)
+Input: text_file (txt), text_file (txt), outFile (tabular), outFile (tabular)
 Output: html_report (html)
 
-Step 7: AddOrReplaceReadGroups (Galaxy Version 2.18.2.1)
+Step 8: AddOrReplaceReadGroups (Galaxy Version 2.18.2.1)
+Input: outFile (bam)
 Output: outFile (bam)
 
-Step 8: GATK4 Mutec2 (Galaxy Version 4.1.7.0+galaxy1)
+Step 9: GATK4 Mutec2 (Galaxy Version 4.1.7.0+galaxy1)
+Input: outFile (bam)
+Input Reference Genome: hg19.fa
 Output: output_vcf (vcf)
 
-Step 9: SnpSift Intervals (Galaxy Version 4.3+t.galaxy0)
+Step 10: SnpSift Intervals (Galaxy Version 4.3+t.galaxy0)
+Input: output_vcf (vcf), BRCADirect.v1.0.bed
 Output: output (vcf)
