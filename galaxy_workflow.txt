@@ -4,6 +4,9 @@ Input: RMH200SolidBRCA-Blend-T_S95_R1_001.fastq.qz & RMH200SolidBRCA-Blend-T_S95
 Input Reference Genome
 Input: hg19.fa
 
+Input BED
+Input: BRCADirect.v1.0.bed
+
 Step 1: FastQC (Galaxy Version 0.73+galaxy0)
 Output: text_file (txt)
 
@@ -27,9 +30,6 @@ Output: outFile (bam)
 
 Step 8: GATK4 Mutec2 (Galaxy Version 4.1.7.0+galaxy1)
 Output: output_vcf (vcf)
-
-Input BED
-Input: BRCADirect.v1.0.bed
 
 Step 9: SnpSift Intervals (Galaxy Version 4.3+t.galaxy0)
 Output: output (vcf)
