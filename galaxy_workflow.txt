@@ -4,17 +4,20 @@ Input: RMH200SolidBRCA-Blend-T_S95_R1_001.fastq.qz & RMH200SolidBRCA-Blend-T_S95
 Input Reference Genome
 Input: hg19.fa
 
-Step 1: Bowtie2 (Galaxy Version 2.5.0+galaxy0)
-Output: bam_output
-
-Step 2: MarkDuplicates (Galaxy Version 2.18.2.4)
-Output: outFile (bam)
-
-Step 3:Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
-Output: outFile (tabular)
-
-Step 4: FastQC (Galaxy Version 0.73+galaxy0)
+Step 1: FastQC (Galaxy Version 0.73+galaxy0)
 Output: text_file (txt)
 
-Step 5: MultiQC (Galaxy Version 1.11+galaxy1)
+Step 2: Bowtie2 (Galaxy Version 2.5.0+galaxy0)
+Output: bam_output
+
+Step 3 :Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
+Output: outFile (tabular)
+
+Step 4: MarkDuplicates (Galaxy Version 2.18.2.4)
+Output: outFile (bam)
+
+Step 5: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2)
+Output: outFile (tabular)
+
+Step 6: MultiQC (Galaxy Version 1.11+galaxy1)
 Output: html_report (html)
