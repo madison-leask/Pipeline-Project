@@ -21,3 +21,6 @@ Output: outFile (tabular)
 
 Step 6: MultiQC (Galaxy Version 1.11+galaxy1)
 Output: html_report (html)
+
+Input BED
+Input: BRCADirect.v1.0.bed
