@@ -116,6 +116,13 @@ GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), dbsnp.b147.chr5_12_17.vcf
 Output: outfile (gemini.sqlite)
 
+Input Cancer Hotspot data
+Input: cancerhotspots_v2.bed
+
+GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Input: outfile (gemini.sqlite), cancerhotspots_v2.bed
+Output: outfile (gemini.sqlite)
+
 Input CIViC data
 Input: CIViC.bed
 
@@ -133,7 +140,6 @@ Output: outfile (gemini.sqlite)
 GEMINI query (Galaxy Version 0.20.1+galaxy1)
 Input: outfile (gemini.sqlite)
 Output: outfile (tabular, json, vcf)
-
 
 
 Input BED file
