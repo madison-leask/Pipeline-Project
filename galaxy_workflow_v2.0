@@ -85,6 +85,7 @@ MultiQC (Galaxy Version 1.11+galaxy1) on FastQC reports from all sequence data
 Input: text_file (txt) x12, outFile (tabular) x4
 Output stats (input) & html_report (html)
 
+
 VarScan Somatic (Galaxy Version 2.4.3.6) on tumour-normal sample pairs
 Input: out_file1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
@@ -96,6 +97,14 @@ Input Reference Genome: hg19.chr5_12_17.fa.gz
   “Minimum base quality”: 28
   “Minimum mapping quality”: 1
 Output: output (vcf), output_indel (vcf), output_snp (vcf)
+
+Input BED file
+Input: BRCADirect.v1.0.bed
+
+SnpEff eff (Galaxy Version 4.3+T.galaxy2)
+Input: output_snp (vcf), BRCADirect.v1.0.bed
+Output: snpeff_output (vcf, bed)
+
 
 SnpEff eff (Galaxy Version 4.3+T.galaxy2)
 Input: output (vcf)
@@ -171,11 +180,6 @@ Join Two Files (Galaxy Version 1.1.2) to join CIViC Gene Summaries to database
 Input: outfile (tabular, json, vcf) & 01-Feb-2019-Gene-Summaries.tsv
 Output: output (input)
 
-Input BED file
-Input: BRCADirect.v1.0.bed
 
-SnpEff eff (Galaxy Version 4.3+T.galaxy2)
-Input: output_snp (vcf), 
-Output: snpeff_output (vcf, bed)
 
 
