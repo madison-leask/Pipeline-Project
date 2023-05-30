@@ -76,3 +76,8 @@ Input: calmd_output (bam) x2
   “Select BAM property to filter on”: mapQuality
   “Filter on read mapping quality (phred scale)”: <=254
 Output:  out_file1 (bam) & out_file2 (txt) x2 
+
+Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on processed BAMs
+Input: out_file1 (bam) x2
+Output: outFile (tabular)
+
