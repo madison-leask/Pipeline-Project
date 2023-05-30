@@ -4,7 +4,15 @@ Input: Normal_231335_r1_chr5_12_17.fastq.gz, Normal_231335_r2_chr5_12_17.fastq.g
 Input Reference Genome
 Input: hg19.chr5_12_17.fa.gz
 
-FastQC on Raw Sequence Data
+FastQC (Galaxy Version 0.73+galaxy0) on Raw Sequence Data 
 Input: Normal_231335_r1_chr5_12_17.fastq.gz, Normal_231335_r2_chr5_12_17.fastq.gz, Tumour_231336_r1_chr5_12_17.fastq.gz, Tumour_231336_r2_chr5_12_17.fastq.gz
 Output: html_file (html) & text_file (txt) x4
+
+Trimmomatic (Galaxy Version 0.38.1) on Tumour paired data 
+Input: Tumour_231336_r1_chr5_12_17.fastq.gz & Tumour_231336_r2_chr5_12_17.fastq.gz
+Output: fastq_out_r1_paired (input), fastq_out_r2_paired (input), fastq_out_r1_unpaired (input), fastq_out_r2_unpaired (input)
+
+Trimmomatic (Galaxy Version 0.38.1) on Normal paired data 
+Input: Normal_231335_r1_chr5_12_17.fastq.gz & Normal_231335_r2_chr5_12_17.fastq.gz,
+Output: fastq_out_r1_paired (input), fastq_out_r2_paired (input), fastq_out_r1_unpaired (input), fastq_out_r2_unpaired (input)
 
