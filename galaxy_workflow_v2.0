@@ -40,10 +40,6 @@ Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: outFile (tabular)
 
-MultiQC (Galaxy Version 1.11+galaxy1) on FastQC reports from all sequence data 
-Input: text_file (txt) x12, outFile (tabular) x2
-Output stats (input) & html_report (html)
-
 Filter BAM datasets on a variety of attributes (Galaxy Version 2.5.2+galaxy1) on tumour and normal paired alignments
 Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam) x2
  In “1: Filter”:
@@ -81,3 +77,6 @@ Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on processed BAMs
 Input: out_file1 (bam) x2
 Output: outFile (tabular)
 
+MultiQC (Galaxy Version 1.11+galaxy1) on FastQC reports from all sequence data 
+Input: text_file (txt) x12, outFile (tabular) x4
+Output stats (input) & html_report (html)
