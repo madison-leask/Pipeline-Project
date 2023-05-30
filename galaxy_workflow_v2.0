@@ -88,4 +88,4 @@ Output stats (input) & html_report (html)
 VarScan Somatic (Galaxy Version 2.4.3.6) on tumour-normal sample pairs
 Input: out_file1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
-Output: output (vcf)
+Output: output_snp (vcf) & output_indel (vcf)
