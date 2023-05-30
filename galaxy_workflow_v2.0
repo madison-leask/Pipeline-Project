@@ -150,6 +150,10 @@ Input: outfile (gemini.sqlite)
  “Genotype filter expression”: gt_alt_freqs.NORMAL <= 0.05 AND gt_alt_freqs.TUMOR >= 0.10
 Output: outfile (tabular, json, vcf)
 
+Input UniProt Cancer Genes
+Input: uniprot_cancer_genes_13Feb2019.txt
+
+
 Input BED file
 Input: BRCADirect.v1.0.bed
 
