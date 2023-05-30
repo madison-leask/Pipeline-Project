@@ -61,3 +61,6 @@ RmDup (Galaxy Version 2.0.1) on filtered alignments
 Input: out_file1 (bam) x2
 Output: output1 (bam) x2
 
+BamLeftAlign (Galaxy Version 1.3.6) on processed alignments
+Input: output1 (bam) x2
+Output: output_bam (bam) x2
