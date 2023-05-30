@@ -123,6 +123,14 @@ GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), CIViC.bed
 Output: outfile (gemini.sqlite)
 
+Input Cancer Genome Interpreter data
+Input: cgi_variant_positions.bed
+
+GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Input: outfile (gemini.sqlite), cgi_variant_positions.bed
+Output: outfile (gemini.sqlite)
+
+
 
 Input BED file
 Input: BRCADirect.v1.0.bed
