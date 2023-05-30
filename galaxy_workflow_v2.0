@@ -109,6 +109,13 @@ GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), snpeff_output (vcf, bed)
 Output: outfile (gemini.sqlite)
 
+Input dbSNP data 
+Input: dbsnp.b147.chr5_12_17.vcf
+
+GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Input: outfile (gemini.sqlite), dbsnp.b147.chr5_12_17.vcf
+Output: outfile (gemini.sqlite)
+
 
 
 Input BED file
