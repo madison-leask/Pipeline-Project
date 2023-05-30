@@ -57,4 +57,7 @@ In “3: Filter”:
 “Select reads with mapped mate”: Yes
 Output: out_file1 (bam) & out_file2 (txt) x2
 
+RmDup (Galaxy Version 2.0.1) on filtered alignments
+Input: out_file1 (bam) x2
+Output: output1 (bam) x2
 
