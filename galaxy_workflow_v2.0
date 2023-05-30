@@ -1,3 +1,5 @@
 Input Raw Sequence Data
 Inputs: Normal_231335_r1_chr5_12_17.fastq.gz, Normal_231335_r2_chr5_12_17.fastq.gz, Tumour_231336_r1_chr5_12_17.fastq.gz, Tumour_231336_r2_chr5_12_17.fastq.gz
 
+Input Reference Genome
+Input: hg19.chr5_12_17.fa.gz
