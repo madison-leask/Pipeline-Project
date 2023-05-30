@@ -4,43 +4,43 @@ Input: Normal_231335_r1_chr5_12_17.fastq.gz, Normal_231335_r2_chr5_12_17.fastq.g
 Input Reference Genome
 Input: hg19.chr5_12_17.fa.gz
 
-FastQC (Galaxy Version 0.73+galaxy0) on Raw Sequence Data 
+Step 1: FastQC (Galaxy Version 0.73+galaxy0) on Raw Sequence Data 
 Input: Normal_231335_r1_chr5_12_17.fastq.gz, Normal_231335_r2_chr5_12_17.fastq.gz, Tumour_231336_r1_chr5_12_17.fastq.gz, Tumour_231336_r2_chr5_12_17.fastq.gz
 Output: html_file (html) & text_file (txt) x4
 
-Trimmomatic (Galaxy Version 0.38.1) on Tumour paired data 
+Step 2: Trimmomatic (Galaxy Version 0.38.1) on Tumour paired data 
 Input: Tumour_231336_r1_chr5_12_17.fastq.gz & Tumour_231336_r2_chr5_12_17.fastq.gz
 Output: fastq_out_r1_paired (input), fastq_out_r2_paired (input), fastq_out_r1_unpaired (input), fastq_out_r2_unpaired (input)
 
-Trimmomatic (Galaxy Version 0.38.1) on Normal paired data 
+Step 3: Trimmomatic (Galaxy Version 0.38.1) on Normal paired data 
 Input: Normal_231335_r1_chr5_12_17.fastq.gz & Normal_231335_r2_chr5_12_17.fastq.gz,
 Output: fastq_out_r1_paired (input), fastq_out_r2_paired (input), fastq_out_r1_unpaired (input), fastq_out_r2_unpaired (input)
 
-FastQC (Galaxy Version 0.73+galaxy0) on Sequence data processed with Trimmomatic 
+Step 4: FastQC (Galaxy Version 0.73+galaxy0) on Sequence data processed with Trimmomatic 
 Input: fastq_out_r1_paired (input), fastq_out_r2_paired (input), fastq_out_r1_unpaired (input), fastq_out_r2_unpaired (input) x2
 Output: html_file (html) & text_file (txt) x8
 
-Map with BWA-MEM (Galaxy Version 0.7.17.2) on Tumour paired data processed with Trimmomatic
+Step 5: Map with BWA-MEM (Galaxy Version 0.7.17.2) on Tumour paired data processed with Trimmomatic
 Input: fastq_out_r1_paired (input) & fastq_out_r2_paired (input)
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
 
-Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on Tumour paired alignment 
+Step 6: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on Tumour paired alignment 
 Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: outFile (tabular)
 
-Map with BWA-MEM (Galaxy Version 0.7.17.2) on Normal paired data processed with Trimmomatic
+Step 7: Map with BWA-MEM (Galaxy Version 0.7.17.2) on Normal paired data processed with Trimmomatic
 Input: fastq_out_r1_paired (input) & fastq_out_r2_paired (input)
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
 
-Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on Normal paired alignment 
+Step 8: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on Normal paired alignment 
 Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: outFile (tabular)
 
-Filter BAM datasets on a variety of attributes (Galaxy Version 2.5.2+galaxy1) on tumour and normal paired alignments
+Step 9: Filter BAM datasets on a variety of attributes (Galaxy Version 2.5.2+galaxy1) on tumour and normal paired alignments
 Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam) x2
  In “1: Filter”:
   “Select BAM property to filter on”: mapQuality
@@ -53,40 +53,39 @@ Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam) x2
   “Select reads with mapped mate”: Yes
 Output: out_file1 (bam) & out_file2 (txt) x2
 
-RmDup (Galaxy Version 2.0.1) on filtered alignments
+Step 10: RmDup (Galaxy Version 2.0.1) on filtered alignments
 Input: out_file1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: output1 (bam) x2
 
-BamLeftAlign (Galaxy Version 1.3.6) on processed alignments
+Step 11: BamLeftAlign (Galaxy Version 1.3.6) on processed alignments
 Input: output1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: output_bam (bam) x2
 
-Samtools calmd to recalculate MD/NM tags (Galaxy Version 2.0.3) on left-aligned BAMs
+Step 12: Samtools calmd to recalculate MD/NM tags (Galaxy Version 2.0.3) on left-aligned BAMs
 Input: output_bam (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Advanced options: Coefficient to cap mapping quality of poorly mapped reads = 50
 Output: calmd_output (bam) x2
 
-Filter BAM datasets on a variety of attributes (Galaxy Version 2.5.2+galaxy1) on processed alignments
+Step 13: Filter BAM datasets on a variety of attributes (Galaxy Version 2.5.2+galaxy1) on processed alignments
 Input: calmd_output (bam) x2
  In “1: Filter”:
   “Select BAM property to filter on”: mapQuality
   “Filter on read mapping quality (phred scale)”: <=254
 Output:  out_file1 (bam) & out_file2 (txt) x2 
 
-Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on processed BAMs
+Step 14: Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on processed BAMs
 Input: out_file1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
 Output: outFile (tabular)
 
-MultiQC (Galaxy Version 1.11+galaxy1) on FastQC reports from all sequence data 
+Step 15: MultiQC (Galaxy Version 1.11+galaxy1) on FastQC reports from all sequence data 
 Input: text_file (txt) x12, outFile (tabular) x4
 Output stats (input) & html_report (html)
 
-
-VarScan Somatic (Galaxy Version 2.4.3.6) on tumour-normal sample pairs
+Step 16: VarScan Somatic (Galaxy Version 2.4.3.6) on tumour-normal sample pairs
 Input: out_file1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
  Non-default options: 
@@ -98,61 +97,61 @@ Input Reference Genome: hg19.chr5_12_17.fa.gz
   “Minimum mapping quality”: 1
 Output: output (vcf), output_indel (vcf), output_snp (vcf)
 
-Input BED file
+Step 17: Input BED file
 Input: BRCADirect.v1.0.bed
 
-SnpEff eff (Galaxy Version 4.3+T.galaxy2)
+Step 18: SnpEff eff (Galaxy Version 4.3+T.galaxy2)
 Input: output_snp (vcf), BRCADirect.v1.0.bed
 Output: snpeff_output (vcf, bed)
 
 
-SnpEff eff (Galaxy Version 4.3+T.galaxy2)
+Step 19: SnpEff eff (Galaxy Version 4.3+T.galaxy2)
 Input: output (vcf)
 Output: snpeff_output (vcf, bed)
 
-GEMINI load (Galaxy Version 0.20.1+galaxy2) 
+Step 20: GEMINI load (Galaxy Version 0.20.1+galaxy2) 
 Input: snpeff_output (vcf, bed)
 Output: outfile (gemini.sqlite)
 
-GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Step 21: GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), snpeff_output (vcf, bed)
 Output: outfile (gemini.sqlite)
 
 Input dbSNP data 
 Input: dbsnp.b147.chr5_12_17.vcf
 
-GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Step 22: GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), dbsnp.b147.chr5_12_17.vcf
 Output: outfile (gemini.sqlite)
 
 Input Cancer Hotspot data
 Input: cancerhotspots_v2.bed
 
-GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Step 23: GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), cancerhotspots_v2.bed
 Output: outfile (gemini.sqlite)
 
 Input CIViC data
 Input: CIViC.bed
 
-GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Step 24: GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), CIViC.bed
 Output: outfile (gemini.sqlite)
 
 Input Cancer Genome Interpreter data
 Input: cgi_variant_positions.bed
 
-GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
+Step 25: GEMINI annotate (Galaxy Version 0.20.1+galaxy2)
 Input: outfile (gemini.sqlite), cgi_variant_positions.bed
 Output: outfile (gemini.sqlite)
 
-GEMINI query (Galaxy Version 0.20.1+galaxy1)
+Step 26: GEMINI query (Galaxy Version 0.20.1+galaxy1)
 Input: outfile (gemini.sqlite)
  “Restrictions to apply to genotype values”: gt_alt_freqs.NORMAL <= 0.05 AND gt_alt_freqs.TUMOR >= 0.10
   “Additional constraints expressed in SQL syntax”: somatic_status = 2 AND somatic_p <= 0.05 AND filter IS NULL
 Output: outfile (tabular, json, vcf)
 
-GEMINI query (Galaxy Version 0.20.1+galaxy1)
+Step 27: GEMINI query (Galaxy Version 0.20.1+galaxy1)
 Input: outfile (gemini.sqlite)
  “Build GEMINI query using”: Advanced query constructor
  “The query to be issued to the database”: SELECT v.gene, v.chrom, g.synonym, g.hgnc_id, g.entrez_id, g.rvis_pct, v.clinvar_gene_phenotype FROM variants v, gene_detailed g WHERE v.chrom = g.chrom AND v.gene = g.gene AND v.somatic_status = 2 AND v.somatic_p <= 0.05 AND v.filter IS NULL GROUP BY g.gene
@@ -162,25 +161,25 @@ Output: outfile (tabular, json, vcf)
 Input UniProt Cancer Genes
 Input: uniprot_cancer_genes_13Feb2019.txt
 
-Join Two Files (Galaxy Version 1.1.2) to join UniProt Cancer Genes to database
+Step 28: Join Two Files (Galaxy Version 1.1.2) to join UniProt Cancer Genes to database
 Input: outfile (tabular, json, vcf) & uniprot_cancer_genes_13Feb2019.txt
 Output: output (input)
 
 Input CGI Genes
 Input: cgi_genes.txt
 
-Join Two Files (Galaxy Version 1.1.2) to join CGI genes to database
+Step 29: Join Two Files (Galaxy Version 1.1.2) to join CGI genes to database
 Input: outfile (tabular, json, vcf) & cgi_genes.txt
 Output: output (input)
 
 Input CIViC Gene Summaries
 Input: 01-Feb-2019-Gene-Summaries.tsv
 
-Join Two Files (Galaxy Version 1.1.2) to join CIViC Gene Summaries to database
+Step 30: Join Two Files (Galaxy Version 1.1.2) to join CIViC Gene Summaries to database
 Input: outfile (tabular, json, vcf) & 01-Feb-2019-Gene-Summaries.tsv
 Output: output (input)
 
-Column arrange by header name (Galaxy Version 0.2)
+Step 31: Column arrange by header name (Galaxy Version 0.2)
 Input: output (input) from Join CIViC Gene Summaries to database
  In “1: Specify the first few columns by name”
   “column”: gene
