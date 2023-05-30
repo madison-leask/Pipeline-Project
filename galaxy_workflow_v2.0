@@ -16,3 +16,10 @@ Trimmomatic (Galaxy Version 0.38.1) on Normal paired data
 Input: Normal_231335_r1_chr5_12_17.fastq.gz & Normal_231335_r2_chr5_12_17.fastq.gz,
 Output: fastq_out_r1_paired (input), fastq_out_r2_paired (input), fastq_out_r1_unpaired (input), fastq_out_r2_unpaired (input)
 
+FastQC (Galaxy Version 0.73+galaxy0) on Sequence data processed with Trimmomatic 
+Input: fastq_out_r1_paired (input), fastq_out_r2_paired (input), fastq_out_r1_unpaired (input), fastq_out_r2_unpaired (input) x2
+Output: html_file (html) & text_file (txt) x8
+
+MultiQC (Galaxy Version 1.11+galaxy1) on FastQC reports from all sequence data 
+Input: text_file (txt) x12
+Output stats (input) & html_report (html)
