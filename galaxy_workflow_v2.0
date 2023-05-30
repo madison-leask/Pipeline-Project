@@ -88,4 +88,11 @@ Output stats (input) & html_report (html)
 VarScan Somatic (Galaxy Version 2.4.3.6) on tumour-normal sample pairs
 Input: out_file1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
+ Non-default options: 
+  “Estimated purity (non-tumor content) of normal sample”: 1
+  “Estimated purity (tumor content) of tumor sample”: 0.5
+  “Generate separate output datasets for SNP and indel calls?”: No
+  “Settings for Variant Calling”: Customize settings
+  “Minimum base quality”: 28
+  “Minimum mapping quality”: 1
 Output: output_snp (vcf) & output_indel (vcf)
