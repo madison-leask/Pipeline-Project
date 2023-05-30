@@ -153,9 +153,16 @@ Output: outfile (tabular, json, vcf)
 Input UniProt Cancer Genes
 Input: uniprot_cancer_genes_13Feb2019.txt
 
-Join Two Files (Galaxy Version 1.1.2)
+Join Two Files (Galaxy Version 1.1.2) to join UniProt Cancer Genes to database
 Input: outfile (tabular, json, vcf) & uniprot_cancer_genes_13Feb2019.txt
-Ooutput: output (input)
+Output: output (input)
+
+Input CGI Genes
+Input: cgi_genes.txt
+
+Join Two Files (Galaxy Version 1.1.2) to join CGI genes to database
+Input: outfile (tabular, json, vcf) & cgi_genes.txt
+Output: output (input)
 
 
 Input BED file
