@@ -95,4 +95,15 @@ Input Reference Genome: hg19.chr5_12_17.fa.gz
   “Settings for Variant Calling”: Customize settings
   “Minimum base quality”: 28
   “Minimum mapping quality”: 1
-Output: output_snp (vcf) & output_indel (vcf)
+Output: output (vcf), output_indel (vcf), output_snp (vcf)
+
+SnpEff eff (Galaxy Version 4.3+T.galaxy2)
+Input: output (vcf)
+Output: snpeff_output (vcf, bed)
+
+Input BED file
+Input: BRCADirect.v1.0.bed
+
+SnpEff eff (Galaxy Version 4.3+T.galaxy2)
+Input: output_snp (vcf), 
+Output: snpeff_output (vcf, bed)
