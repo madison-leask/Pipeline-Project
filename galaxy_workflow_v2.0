@@ -28,6 +28,14 @@ Map with BWA-MEM (Galaxy Version 0.7.17.2) on Tumour paired data processed with 
 Input: fastq_out_r1_paired (input) & fastq_out_r2_paired (input)
 Output: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
 
+Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on Tumour paired alignment 
+Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
+Output: outFile (tabular)
+
 Map with BWA-MEM (Galaxy Version 0.7.17.2) on Normal paired data processed with Trimmomatic
 Input: fastq_out_r1_paired (input) & fastq_out_r2_paired (input)
 Output: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
+
+Collect Alignment Summary Metrics (Galaxy Version 2.18.2.2) on Normal paired alignment 
+Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam)
+Output: outFile (tabular)
