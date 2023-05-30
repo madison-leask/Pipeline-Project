@@ -180,6 +180,31 @@ Join Two Files (Galaxy Version 1.1.2) to join CIViC Gene Summaries to database
 Input: outfile (tabular, json, vcf) & 01-Feb-2019-Gene-Summaries.tsv
 Output: output (input)
 
-
-
-
+Column arrange by header name (Galaxy Version 0.2)
+Input: output (input) from Join CIViC Gene Summaries to database
+ In “1: Specify the first few columns by name”
+  “column”: gene
+ In “2: Specify the first few columns by name”
+  “column”: chrom
+ In “3: Specify the first few columns by name”
+  “column”: synonym
+ In “4: Specify the first few columns by name”
+  “column”: hgnc_id
+ In “5: Specify the first few columns by name”
+  “column”: entrez_id
+ In “6: Specify the first few columns by name”
+  “column”: rvis_pct
+ In “7: Specify the first few columns by name”
+  “column”: is_OG
+ In “8: Specify the first few columns by name”
+  “column”: is_TS
+ In “9: Specify the first few columns by name”
+  “column”: in_cgi_biomarkers
+ In “10: Specify the first few columns by name”
+  “column”: clinvar_gene_phenotype
+ In “11: Specify the first few columns by name”
+  “column”: gene_civic_url
+ In “12: Specify the first few columns by name”
+  “column”: description
+ “Discard unspecified columns”: Yes
+Output: output (tabular)
