@@ -147,6 +147,7 @@ GEMINI query (Galaxy Version 0.20.1+galaxy1)
 Input: outfile (gemini.sqlite)
  “Build GEMINI query using”: Advanced query constructor
  “The query to be issued to the database”: SELECT v.gene, v.chrom, g.synonym, g.hgnc_id, g.entrez_id, g.rvis_pct, v.clinvar_gene_phenotype FROM variants v, gene_detailed g WHERE v.chrom = g.chrom AND v.gene = g.gene AND v.somatic_status = 2 AND v.somatic_p <= 0.05 AND v.filter IS NULL GROUP BY g.gene
+ “Genotype filter expression”: gt_alt_freqs.NORMAL <= 0.05 AND gt_alt_freqs.TUMOR >= 0.10
 Output: outfile (tabular, json, vcf)
 
 Input BED file
