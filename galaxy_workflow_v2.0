@@ -46,15 +46,15 @@ Output stats (input) & html_report (html)
 
 Filter BAM datasets on a variety of attributes (Galaxy Version 2.5.2+galaxy1) on tumour and normal paired alignments
 Input: bam_output (bam, qname_sorted.bam, qname_input_sorted.bam) x2
-In “1: Filter”:
-“Select BAM property to filter on”: mapQuality
-“Filter on read mapping quality (phred scale)”: >=1
-In “2: Filter”:
-“Select BAM property to filter on”: isMapped
-“Selected mapped reads”: Yes
-In “3: Filter”:
-“Select BAM property to filter on”: isMateMapped
-“Select reads with mapped mate”: Yes
+ In “1: Filter”:
+  “Select BAM property to filter on”: mapQuality
+  “Filter on read mapping quality (phred scale)”: >=1
+ In “2: Filter”:
+  “Select BAM property to filter on”: isMapped
+  “Selected mapped reads”: Yes
+ In “3: Filter”:
+  “Select BAM property to filter on”: isMateMapped
+  “Select reads with mapped mate”: Yes
 Output: out_file1 (bam) & out_file2 (txt) x2
 
 RmDup (Galaxy Version 2.0.1) on filtered alignments
@@ -70,4 +70,9 @@ Input: output_bam (bam) x2
 Advanced options: Coefficient to cap mapping quality of poorly mapped reads = 50
 Output: calmd_output (bam) x2
 
-
+Filter BAM datasets on a variety of attributes (Galaxy Version 2.5.2+galaxy1) on processed alignments
+Input: calmd_output (bam) x2
+ In “1: Filter”:
+  “Select BAM property to filter on”: mapQuality
+  “Filter on read mapping quality (phred scale)”: <=254
+Output:  out_file1 (bam) & out_file2 (txt) x2 
