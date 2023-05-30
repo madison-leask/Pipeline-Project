@@ -153,6 +153,10 @@ Output: outfile (tabular, json, vcf)
 Input UniProt Cancer Genes
 Input: uniprot_cancer_genes_13Feb2019.txt
 
+Join Two Files (Galaxy Version 1.1.2)
+Input: outfile (tabular, json, vcf) & uniprot_cancer_genes_13Feb2019.txt
+Ooutput: output (input)
+
 
 Input BED file
 Input: BRCADirect.v1.0.bed
