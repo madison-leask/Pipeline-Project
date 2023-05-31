@@ -113,7 +113,7 @@ Input: output_snp (vcf), BRCADirect.v1.0.bed
 Output: snpeff_output (vcf, bed)
 
 Step 21: SnpEff eff (Galaxy Version 4.3+T.galaxy2)
-Input: output (vcf)
+Input: output (vcf), BRCADirect.v1.0.bed
 Output: snpeff_output (vcf, bed)
 
 Step 22: GEMINI load (Galaxy Version 0.20.1+galaxy2) 
