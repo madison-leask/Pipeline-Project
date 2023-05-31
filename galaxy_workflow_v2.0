@@ -85,6 +85,10 @@ Step 15: MultiQC (Galaxy Version 1.11+galaxy1) on FastQC reports from all sequen
 Input: text_file (txt) x12, outFile (tabular) x4
 Output stats (input) & html_report (html)
 
+Step **: Exome Depth (Galaxy Version 1.1.0) on processed tumour & normal alignments
+Input: out_file1 (bam) x2 
+Output: output (tabular)
+
 Step 16: VarScan Somatic (Galaxy Version 2.4.3.6) on tumour-normal sample pairs
 Input: out_file1 (bam) x2
 Input Reference Genome: hg19.chr5_12_17.fa.gz
