@@ -155,7 +155,7 @@ Output: outfile (gemini.sqlite)
 Step 28: GEMINI query (Galaxy Version 0.20.1+galaxy1)
 Input: outfile (gemini.sqlite)
  “Restrictions to apply to genotype values”: gt_alt_freqs.NORMAL <= 0.05 AND gt_alt_freqs.TUMOR >= 0.10
-  “Additional constraints expressed in SQL syntax”: somatic_status = 2 AND somatic_p <= 0.05 AND filter IS NULL
+  “Additional constraints expressed in SQL syntax”: somatic_status = 2
 Output: outfile (tabular, json, vcf)
 
 Step 29: GEMINI query (Galaxy Version 0.20.1+galaxy1)
